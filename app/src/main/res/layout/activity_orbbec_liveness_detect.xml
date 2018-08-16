@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="20dp"
+        android:background="@drawable/ic_splash"
+        android:layout_height="match_parent">
+        <com.orbbec.view.OpenGLView
+            android:id="@+id/rgbGlView"
+            android:layout_marginTop="60dp"
+            android:layout_width="640px"
+            android:layout_height="480px"/>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/tip_pass"
+            android:textSize="20sp"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp">
+                <ImageView
+                    android:id="@+id/yuan_image"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ic_yuan_0"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp" />
+                <TextView
+                    android:id="@+id/title_text"
+                    android:text="检测中..."
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tip_text"
+                android:textColor="#ffffff"
+                android:text=""
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:background="#00ffffff"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:id="@+id/regist_button"
+            android:text=""
+            android:background="@drawable/select_button_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/system_manager"
+            android:text=""
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/select_button_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.orbbec.view.OpenGLView
+        android:id="@+id/depthGlView"
+        android:visibility="invisible"
+        android:layout_width="640px"
+        android:layout_height="480px"/>
+
+    <face.yang.com.facerecognition.view.RectView
+        android:id="@+id/rectview"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="640px"
+        android:layout_height="480px" />
+
+</RelativeLayout>

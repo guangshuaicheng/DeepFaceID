@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#e7e7e7"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="#2b5dd2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:id="@+id/regist_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:id="@+id/regist_back2"
+            android:background="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:text="注册录入"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/regist_head"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_icon_head"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/regist_ticket"
+                android:text="拍照"
+                android:textSize="15sp"
+                android:layout_alignTop="@+id/regist_head"
+                android:layout_toRightOf="@+id/regist_head"
+                android:layout_width="70dp"
+                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/regist_upload"
+                android:text="上传"
+                android:textSize="15sp"
+                android:layout_below="@+id/regist_ticket"
+                android:layout_toRightOf="@+id/regist_head"
+                android:layout_width="70dp"
+                android:layout_height="40dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/regist_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/item_Line"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/regist_confirm"
+        android:textSize="20sp"
+        android:text="确定"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#2c5dd1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

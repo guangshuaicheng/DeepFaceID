@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#e7e7e7"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="#2b5dd2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/regist_back"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <ImageView
+                android:id="@+id/regist_back2"
+                android:background="@drawable/ic_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp" />
+
+            <TextView
+                android:text="数据管理"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="编辑"
+                android:id="@+id/edit"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:text="注册"
+                android:id="@+id/regist"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/edit"
+                android:textColor="#ffffff"
+                android:layout_width="50dp"
+                android:layout_height="60dp" />
+
+        </RelativeLayout>
+
+        <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/listview"
+            android:dividerHeight="0dp"
+            android:divider="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

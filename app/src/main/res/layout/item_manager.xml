@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/checkbox_"
+        android:text="删除"
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/image_head"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/ic_icon_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:id="@+id/manager_name"
+            android:layout_alignTop="@+id/image_head"
+            android:layout_toRightOf="@+id/image_head"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="王先生"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="UID编号:ddd"
+            android:layout_alignLeft="@+id/manager_name"
+            android:layout_marginTop="10dp"
+            android:id="@+id/manager_uid"
+            android:layout_below="@+id/manager_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:background="@drawable/ic_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitCenter"
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

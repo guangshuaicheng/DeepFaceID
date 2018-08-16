@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#e7e7e7"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#2b5dd2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:id="@+id/regist_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:id="@+id/regist_back2"
+            android:background="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:text="注册信息"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/head_image"
+        android:scaleType="centerCrop"
+        android:background="@drawable/ic_icon_head"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/info_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.aip.face.TexturePreviewView
+        android:id="@+id/preview_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+    <TextureView
+        android:id="@+id/texture_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="right">
+
+        <!--<ImageView-->
+            <!--android:id="@+id/test_view1"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"/>-->
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/user_of_max_score_tv1"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="10dp"
+            android:layout_alignParentTop="true"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_marginTop="5dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:paddingBottom="20dp"
+        android:background="@drawable/ic_splash"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/head_image"
+            android:layout_marginTop="40dp"
+            android:scaleType="centerCrop"
+            android:layout_width="160dp"
+            android:layout_height="160dp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/tip_pass"
+            android:textSize="20sp"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp">
+                <ImageView
+                    android:id="@+id/yuan_image"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ic_yuan_0"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp" />
+                <TextView
+                    android:id="@+id/title_text"
+                    android:text="检测中..."
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tip_text"
+                android:textColor="#ffffff"
+                android:text=""
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:background="#00ffffff"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:id="@+id/regist_button"
+            android:text=""
+            android:background="@drawable/select_button_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/system_manager"
+            android:text=""
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/select_button_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</FrameLayout>
