@@ -7,18 +7,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
-import android.view.WindowManager;
 
 import com.baidu.aip.db.DBManager;
 import com.baidu.aip.manager.FaceSDKManager;
 import com.baidu.aip.utils.FileUitls;
 import com.baidu.aip.utils.PreferencesUtil;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import face.yang.com.facerecognition.R;
-import face.yang.com.facerecognition.base.BaseActivity;
 import face.yang.com.facerecognition.ui.activity.LivenessSettingActivity;
-import face.yang.com.facerecognition.ui.activity.OrbbecLivenessDetectActivity;
 
 public class SplashActivity extends Activity {
 
