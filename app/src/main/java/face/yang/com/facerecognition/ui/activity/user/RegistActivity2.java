@@ -415,7 +415,12 @@ public class RegistActivity2 extends BaseActivity implements OpenNIHelper.Device
                 File file = new File(faceDir, imageName);
                 // 压缩人脸图片至300 * 300，减少网络传输时间
                 ImageUtils.resize(bitmap, file, 680, 680);
-                tipInputPassWord(file);
+//                tipInputPassWord(file);
+                Intent intent = new Intent();
+                intent.putExtra("file_path", file.getAbsolutePath());
+                setResult(Activity.RESULT_OK, intent);
+                success = true;
+                finish();
             } else {
                 toast("注册人脸目录未找到");
             }

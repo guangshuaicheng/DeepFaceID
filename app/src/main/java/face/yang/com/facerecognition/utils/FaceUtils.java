@@ -16,9 +16,6 @@ import com.baidu.aip.entity.Group;
 import com.baidu.aip.manager.FaceEnvironment;
 import com.baidu.aip.manager.FaceSDKManager;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import face.yang.com.facerecognition.R;
 
 public class FaceUtils {
@@ -64,7 +61,7 @@ public class FaceUtils {
 
             @Override
             public void initSuccess() {
-                Log.i(TAG,"sdk init success");
+                Log.i(TAG,"sdk init success2");
             }
 
             @Override

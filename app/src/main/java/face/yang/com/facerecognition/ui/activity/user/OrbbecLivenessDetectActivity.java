@@ -127,7 +127,7 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
     private OpenGLView mRgbGLView;
     private User user;
     private String userIdOfMaxScore = "";
-    private float maxScore = 80.1f;
+    private float maxScore = 65.1f;
 
     private int mWidth = com.orbbec.utils.GlobalDef.RESOLUTION_X;
     private int mHeight = com.orbbec.utils.GlobalDef.RESOLUTION_Y;
@@ -605,12 +605,13 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
 
     private void tipPass(String text){
 
-        if(isShowPassword){
+        if(isShowPassword||isFinishing()){
             return;
         }
 
         if(commonDialog!=null&&commonDialog.isShowing()){
-            return;
+            commonDialog.dismiss();
+            commonDialog=null;
         }
         commonDialog = new CommonDialog(this, R.layout.dialog_tippass);
         Window window = commonDialog.getWindow();
