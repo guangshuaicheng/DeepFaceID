@@ -135,7 +135,8 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
     private Object sync = new Object();
     private boolean exit = false;
     private CommonDialog commonDialog;
-    private String pin="263";
+//    private String pin="263";
+    private String pin="89";
 
     private static final int IDENTITY_IDLE = 2;
     private static final int IDENTITYING = 3;
@@ -290,6 +291,7 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
         GPIO.closeSU();
         dismissDialog();
 
+        FaceUtils.instance().releaseSound();
         if (initOk) {
             exit = true;
             if (thread != null) {
@@ -605,6 +607,10 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
 
     private void tipPass(String text){
 
+        if(isFinishing()){
+            return;
+        }
+
         if(isShowPassword||isFinishing()){
             return;
         }
@@ -625,6 +631,7 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
             @Override
             public void onClick(View view) {
                 dismissDialog();
+                FaceUtils.instance().releaseSound();
             }
         });
         dialogText.setText(text);

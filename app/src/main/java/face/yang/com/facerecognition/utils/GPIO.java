@@ -15,8 +15,10 @@ public class GPIO {
         Process su = null;
         try {
 //                su = Runtime.getRuntime().exec("/system/xbin/su");
+            Log.e("gpio","打开1");
             su = Runtime.getRuntime().exec("su");
             dataOutputStream = new DataOutputStream(su.getOutputStream());
+            Log.e("gpio","打开2");
         } catch (IOException e) {
             e.printStackTrace();
             Log.e("gpio","打开gpio文件失败");
@@ -48,6 +50,7 @@ public class GPIO {
                 openSU();
             }
             dataOutputStream.writeBytes("echo "+index+" > /sys/class/gpio/export"+"\n");
+            dataOutputStream.writeBytes("chmod 777 /sys/class/gpio/gpio"+index+"/value\n");
             dataOutputStream.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,6 +67,7 @@ public class GPIO {
             if(dataOutputStream==null){
                 openSU();
             }
+            Log.i("gpio","gpio设置");
             dataOutputStream.writeBytes("echo out > /sys/class/gpio/gpio"+index+"/direction"+"\n");
             dataOutputStream.flush();
         } catch (IOException e) {
@@ -81,6 +85,7 @@ public class GPIO {
             if(dataOutputStream==null){
                 openSU();
             }
+            Log.i("gpio","gpio打开");
             dataOutputStream.writeBytes("echo 1 > /sys/class/gpio/gpio"+index+"/value"+"\n");
             dataOutputStream.flush();
         } catch (IOException e) {
@@ -98,6 +103,7 @@ public class GPIO {
             if(dataOutputStream==null){
                 openSU();
             }
+            Log.i("gpio","gpio关闭");
             dataOutputStream.writeBytes("echo 0 > /sys/class/gpio/gpio"+index+"/value"+"\n");
             dataOutputStream.flush();
         } catch (IOException e) {

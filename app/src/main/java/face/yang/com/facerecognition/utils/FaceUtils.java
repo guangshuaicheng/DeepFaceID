@@ -2,9 +2,13 @@ package face.yang.com.facerecognition.utils;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.media.AudioAttributes;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -17,12 +21,16 @@ import com.baidu.aip.manager.FaceEnvironment;
 import com.baidu.aip.manager.FaceSDKManager;
 
 import face.yang.com.facerecognition.R;
+import face.yang.com.facerecognition.base.AppManager;
+import face.yang.com.facerecognition.base.FaceApplication;
 
 public class FaceUtils {
 
     public static boolean isUSB=false;
+    private int load;
 
     public static FaceUtils faceUtils;
+    private SoundPool mSoundPoll;
 
     public static FaceUtils instance(){
         if(faceUtils==null){
@@ -163,14 +171,17 @@ public class FaceUtils {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void playerSuccess(Context context){
         player(context,R.raw.success);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void registSuccess(Context context){
         player(context,R.raw.regist_success);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void getFaceSuccess(Context context){
         player(context,R.raw.getfacesuccess);
     }
@@ -179,28 +190,58 @@ public class FaceUtils {
 //        player(context,R.raw.unregist);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void tipInputPassWord(Context context){
         player(context,R.raw.inputpassword);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void tipinputname(Context context){
         player(context,R.raw.inpoutname);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void pwsErr(Context context){
         player(context,R.raw.err);
     }
 
-    private void player(Context context,int res) {
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, res);
-        mediaPlayer.setVolume(1.0F, 1.0F);
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            public void onCompletion(MediaPlayer mp) {
-                mp.release();
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void player(Context context, int res) {
+//        MediaPlayer mediaPlayer = MediaPlayer.create(context, res);
+//        mediaPlayer.setVolume(1.0F, 1.0F);
+//        mediaPlayer.start();
+//        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//            public void onCompletion(MediaPlayer mp) {
+//                mp.release();
+//            }
+//        });
+
+        AudioAttributes abs = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_MEDIA)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .build() ;
+        if(mSoundPoll==null){
+            mSoundPoll = new SoundPool.Builder()
+                    .setMaxStreams(10)   //设置允许同时播放的流的最大值
+                    .setAudioAttributes(abs)   //完全可以设置为null
+                    .build();
+        }else {
+            mSoundPoll.release();
+        }
+        mSoundPoll.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                mSoundPoll.play(load,1,1,1,0,1);
+
             }
         });
-        mediaPlayer.start();
+        load = mSoundPoll.load(context,res, 1);
     }
 
+    public void releaseSound(){
+        if(mSoundPoll!=null){
+            mSoundPoll.release();
+        }
+    }
 
 }
