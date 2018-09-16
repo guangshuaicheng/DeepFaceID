@@ -222,11 +222,9 @@ public class FaceUtils {
                 .build() ;
         if(mSoundPoll==null){
             mSoundPoll = new SoundPool.Builder()
-                    .setMaxStreams(10)   //设置允许同时播放的流的最大值
+                    .setMaxStreams(100)   //设置允许同时播放的流的最大值
                     .setAudioAttributes(abs)   //完全可以设置为null
                     .build();
-        }else {
-            mSoundPoll.release();
         }
         mSoundPoll.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
@@ -240,7 +238,7 @@ public class FaceUtils {
 
     public void releaseSound(){
         if(mSoundPoll!=null){
-            mSoundPoll.release();
+//            mSoundPoll.release();
         }
     }
 

@@ -1,12 +1,11 @@
 /*
  * Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
  */
-
 apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 16
@@ -34,14 +33,11 @@ android {
     }
 }
 
-
 dependencies {
     // compile fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.android.support:appcompat-v7:27+'
+    api project(path: ':orbbec')
     api files('libs/baidu_license.jar')
     api files('libs/FaceSDK.jar')
-    api files('libs/liantian_3-1-6-1-286_0614.jar')
-    api files('libs/roottools.jar')
-
-    api 'com.android.support:appcompat-v7:27.1.1'
-    api project(path:':orbbec')
+    api files('libs/online_liantian_3-1-6-3-381_0808.jar')
 }

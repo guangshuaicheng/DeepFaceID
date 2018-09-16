@@ -6,6 +6,8 @@ import java.util.concurrent.Executors;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.baidu.aip.ui.Activation;
 import com.baidu.aip.utils.FileUitls;
 import com.baidu.aip.utils.PreferencesUtil;
+import com.baidu.idl.facesdk.FaceConfig;
 import com.baidu.idl.facesdk.FaceSDK;
 import com.baidu.idl.license.AndroidLicenser;
 
@@ -29,7 +32,7 @@ public class FaceSDKManager {
     private FaceFeature faceFeature;
     private Context context;
     private SdkInitListener sdkInitListener;
-    private volatile int initStatus = SDK_UNACTIVATION;
+    public static volatile int initStatus = SDK_UNACTIVATION;
     private Handler handler = new Handler(Looper.getMainLooper());
 
     private FaceSDKManager() {
@@ -107,7 +110,7 @@ public class FaceSDKManager {
      * @param context
      */
     private void initLiveness(Context context) {
-        FaceSDK.livenessSilentInit(context, FaceSDK.LivenessTypeId.LIVEID_VIS);
+        FaceSDK.livenessSilentInit(context, FaceSDK.LivenessTypeId.LIVEID_VIS,2);
         FaceSDK.livenessSilentInit(context, FaceSDK.LivenessTypeId.LIVEID_IR);
         FaceSDK.livenessSilentInit(context, FaceSDK.LivenessTypeId.LIVEID_DEPTH);
     }

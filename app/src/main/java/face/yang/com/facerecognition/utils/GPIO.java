@@ -2,7 +2,7 @@ package face.yang.com.facerecognition.utils;
 
 import android.util.Log;
 
-import com.stericson.RootTools.RootTools;
+//import com.stericson.RootTools.RootTools;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -26,10 +26,10 @@ public class GPIO {
     }
 
     public static void closeSU(){
-        if(!RootTools.isAccessGiven()){
-            Log.i("gpio","没有root权限");
-            return;
-        }
+//        if(!RootTools.isAccessGiven()){
+//            Log.i("gpio","没有root权限");
+//            return;
+//        }
         if(dataOutputStream!=null){
             try {
                 dataOutputStream.close();
@@ -41,10 +41,10 @@ public class GPIO {
 
     //打开gpio引脚，即status_led连接的引脚
     public static void statusPin(String index){
-        if(!RootTools.isAccessGiven()){
-            Log.i("gpio","没有root权限");
-            return;
-        }
+//        if(!RootTools.isAccessGiven()){
+//            Log.i("gpio","没有root权限");
+//            return;
+//        }
         try {
             if(dataOutputStream==null){
                 openSU();
@@ -59,10 +59,10 @@ public class GPIO {
 
     //设置引脚功能为输出
     public static void settingPin(String index){
-        if(!RootTools.isAccessGiven()){
-            Log.i("gpio","没有root权限");
-            return;
-        }
+//        if(!RootTools.isAccessGiven()){
+//            Log.i("gpio","没有root权限");
+//            return;
+//        }
         try {
             if(dataOutputStream==null){
                 openSU();
@@ -77,10 +77,10 @@ public class GPIO {
 
     //
     public static void openPin(String index){
-        if(!RootTools.isAccessGiven()){
-            Log.i("gpio","没有root权限");
-            return;
-        }
+//        if(!RootTools.isAccessGiven()){
+//            Log.i("gpio","没有root权限");
+//            return;
+//        }
         try {
             if(dataOutputStream==null){
                 openSU();
@@ -95,10 +95,10 @@ public class GPIO {
 
     //
     public static void closePin(String index){
-        if(!RootTools.isAccessGiven()){
-            Log.i("gpio","没有root权限");
-            return;
-        }
+//        if(!RootTools.isAccessGiven()){
+//            Log.i("gpio","没有root权限");
+//            return;
+//        }
         try {
             if(dataOutputStream==null){
                 openSU();

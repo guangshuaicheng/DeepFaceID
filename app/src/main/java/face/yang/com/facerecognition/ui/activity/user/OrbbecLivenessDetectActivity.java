@@ -136,7 +136,7 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
     private boolean exit = false;
     private CommonDialog commonDialog;
 //    private String pin="263";
-    private String pin="89";
+    private String pin="1 12";//B4
 
     private static final int IDENTITY_IDLE = 2;
     private static final int IDENTITYING = 3;
@@ -368,6 +368,11 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
             @Override
             public void onTip(int code, final String msg) {
                 Log.i("wtf", "onCallback" + msg);
+
+            }
+
+            @Override
+            public void onCanvasRectCallback(LivenessModel livenessModel) {
 
             }
         });

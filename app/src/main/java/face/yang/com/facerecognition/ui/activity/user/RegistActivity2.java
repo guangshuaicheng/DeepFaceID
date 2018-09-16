@@ -284,6 +284,11 @@ public class RegistActivity2 extends BaseActivity implements OpenNIHelper.Device
                 Log.i("wtf", "onCallback" + msg);
 
             }
+
+            @Override
+            public void onCanvasRectCallback(LivenessModel livenessModel) {
+
+            }
         });
     }
 

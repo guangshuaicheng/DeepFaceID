@@ -4,8 +4,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 16
@@ -45,7 +45,12 @@ android {
 
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.android.support:appcompat-v7:26.+'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:27.+'
     api files('libs/openni2.3.jar')
+//    implementation files('libs/common.aar')
+    api files('libs/libcommon.jar')
+    api files('libs/libuvccamera.jar')
+    api files('libs/usbCameraCommon.jar')
+//    implementation files('libs/uvccamera.aar')
 }

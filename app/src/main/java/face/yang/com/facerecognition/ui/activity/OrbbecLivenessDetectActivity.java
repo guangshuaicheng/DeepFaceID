@@ -152,6 +152,11 @@ public class OrbbecLivenessDetectActivity extends BaseActivity implements OpenNI
                     }
                 });
             }
+
+            @Override
+            public void onCanvasRectCallback(LivenessModel livenessModel) {
+
+            }
         });
     }
 

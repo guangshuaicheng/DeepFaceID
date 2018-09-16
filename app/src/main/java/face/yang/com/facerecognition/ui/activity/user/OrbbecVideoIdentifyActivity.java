@@ -303,6 +303,11 @@ public class OrbbecVideoIdentifyActivity extends Activity implements OpenNIHelpe
                     }
                 });
             }
+
+            @Override
+            public void onCanvasRectCallback(LivenessModel livenessModel) {
+
+            }
         });
     }
 

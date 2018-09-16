@@ -263,6 +263,11 @@ public class RgbIrLivenessActivity extends Activity implements ILivenessCallBack
 		});
 	}
 
+	@Override
+	public void onCanvasRectCallback(LivenessModel livenessModel) {
+
+	}
+
 	private void checkResult(LivenessModel model) {
 
 		if (model == null) {

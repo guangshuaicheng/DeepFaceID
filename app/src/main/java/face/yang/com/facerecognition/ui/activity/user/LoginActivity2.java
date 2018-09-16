@@ -777,6 +777,11 @@ public class LoginActivity2 extends BaseActivity implements OpenNIHelper.DeviceO
                     }
                 });
             }
+
+            @Override
+            public void onCanvasRectCallback(LivenessModel livenessModel) {
+
+            }
         });
 
     }

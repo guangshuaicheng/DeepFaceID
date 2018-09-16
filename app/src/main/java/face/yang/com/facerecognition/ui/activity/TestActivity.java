@@ -252,6 +252,11 @@ public class TestActivity extends Activity implements OpenNIHelper.DeviceOpenLis
                     }
                 });
             }
+
+            @Override
+            public void onCanvasRectCallback(LivenessModel livenessModel) {
+
+            }
         });
     }
 
